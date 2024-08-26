@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f7f7f7;
+        margin: 0;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 2.5em;
+        color: #333;
+      }
+
+      #board {
+        display: grid;
+        grid-template-columns: repeat(3, 120px);
+        grid-template-rows: repeat(3, 120px);
+        gap: 10px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .cell {
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #f0f0f0;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .cell:hover {
+        background-color: #e0e0e0;
+        transform: scale(1.05);
+      }
+
+      .cell.x {
+        color: #ff6b6b;
+        animation: pop 0.3s ease-in-out;
+      }
+
+      .cell.o {
+        color: #4dabf7;
+        animation: pop 0.3s ease-in-out;
+      }
+
+      @keyframes pop {
+        0% {
+          transform: scale(0.8);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      #message {
+        margin-top: 20px;
+        font-size: 1.5em;
+        color: #555;
+      }
+
+      #restart {
+        margin-top: 15px;
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: #4dabf7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #restart:hover {
+        background-color: #1a73e8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tic-Tac-Toe</h1>
+    <div id="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+    <p id="message"></p>
+    <button id="restart">Restart Game</button>
+    <script src="script.js"></script>
+  </body>
+</html>
